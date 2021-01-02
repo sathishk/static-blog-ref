@@ -37,11 +37,11 @@
   </url>
   
   <url>
-    <loc>/apache-ofbiz-website/products/</loc>
+    <loc>/apache-ofbiz-website/modules/</loc>
   </url>
   
   <url>
-    <loc>/apache-ofbiz-website/values/</loc>
+    <loc>/apache-ofbiz-website/products/</loc>
   </url>
   
 </urlset>
