@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Publish Hugo
+name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -11,17 +11,30 @@ on:
     branches: [ master ]
 
 jobs:
-  build-deploy:
+  build:
+
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-        with:
-          submodules: true
-      - name: Publish Site
-        uses: chabad360/hugo-gh-pages@master
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          siteDir: /github/workspace/site
-          args: --environment production
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm test
+      env:
+        CI: true
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.4.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist
