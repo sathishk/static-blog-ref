@@ -24,4 +24,4 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           siteDir: /github/workspace/site
-          args: --environment staging
+          args: --environment production
