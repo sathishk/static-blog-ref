@@ -4,7 +4,7 @@ subtitle: Suite of business applications flexible enough to be used across any i
 image: /img/home-jumbotron.jpg
 blurb:
   heading: Why OFBiz?
-  text: "Kaldi is the coffee store for everyone who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities."
+  text: "OFBiz is apache top level project for 10 years, OFBiz has shown it's stability and maturity as an enterprise-wide ERP solution.OFBiz architecture is extremely flexible allowing developers to quickly and easily extend and enhance the framework with custom features"
 intro:
   heading: "Modules"
   text: "Apache OFBiz comes with a range of core modules out-of-the-box (OOTB) including"
