@@ -37,6 +37,10 @@
   </url>
   
   <url>
+    <loc>/apache-ofbiz-website/downloads/</loc>
+  </url>
+  
+  <url>
     <loc>/apache-ofbiz-website/modules/</loc>
   </url>
   
