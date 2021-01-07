@@ -1,7 +1,5 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
-
 <div class="container">
   <div class="row mb-2">
       {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
